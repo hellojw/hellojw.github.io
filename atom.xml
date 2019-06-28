@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>小威威@基地之一</title>
+  
+  <subtitle>学无止境</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://hellojw.github.io/"/>
+  <updated>2019-06-28T11:14:01.960Z</updated>
+  <id>https://hellojw.github.io/</id>
+  
+  <author>
+    <name>Jiang Wei</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>flags 太多啦</title>
+    <link href="https://hellojw.github.io/2019/06/28/li-qun-flags/"/>
+    <id>https://hellojw.github.io/2019/06/28/li-qun-flags/</id>
+    <published>2019-06-28T10:54:00.000Z</published>
+    <updated>2019-06-28T11:14:01.960Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-是什么？"><a href="#1-是什么？" class="headerlink" title="1.是什么？"></a>1.是什么？</h2><p>flags：</p><ul><li>重新学习 Linux</li><li>重新学习 SHELL 和 Python</li><li>重新学习 HTML 、CSS  、JS</li><li>以上学习的截止日期：2020年1月1日</li></ul><h2 id="2-为什么"><a href="#2-为什么" class="headerlink" title="2.为什么"></a>2.为什么</h2><ul><li>想扫一下自己的技术盲区，查漏补缺</li><li>想变得更好</li></ul><h2 id="3-怎么样"><a href="#3-怎么样" class="headerlink" title="3.怎么样"></a>3.怎么样</h2><ul><li>线上线下等等方式有很多，看自己能否坚持下去了</li><li>主要还是要坚持啊</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-是什么？&quot;&gt;&lt;a href=&quot;#1-是什么？&quot; class=&quot;headerlink&quot; title=&quot;1.是什么？&quot;&gt;&lt;/a&gt;1.是什么？&lt;/h2&gt;&lt;p&gt;flags：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;重新学习 Linux&lt;/li&gt;
+&lt;li&gt;重新学习 SHELL 和 P
+      
+    
+    </summary>
+    
+      <category term="小目标" scheme="https://hellojw.github.io/categories/%E5%B0%8F%E7%9B%AE%E6%A0%87/"/>
+    
+    
+      <category term="情感" scheme="https://hellojw.github.io/tags/%E6%83%85%E6%84%9F/"/>
+    
+      <category term="生活" scheme="https://hellojw.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+</feed>
