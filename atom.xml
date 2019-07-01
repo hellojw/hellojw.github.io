@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hellojw.github.io/"/>
-  <updated>2019-06-28T11:14:01.960Z</updated>
+  <updated>2019-07-01T12:25:19.715Z</updated>
   <id>https://hellojw.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>这两天干了啥</title>
+    <link href="https://hellojw.github.io/2019/06/30/zhe-liang-tian-gan-liao-sha/"/>
+    <id>https://hellojw.github.io/2019/06/30/zhe-liang-tian-gan-liao-sha/</id>
+    <published>2019-06-30T10:54:00.000Z</published>
+    <updated>2019-07-01T12:25:19.715Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="技术方面"><a href="#技术方面" class="headerlink" title="技术方面"></a>技术方面</h2><ol><li>更新方面</li></ol><ul><li>博客园更新了一下：运维面试相关的题目<br><a href="https://www.cnblogs.com/WSQL/articles/11106338.html" target="_blank" rel="noopener">https://www.cnblogs.com/WSQL/articles/11106338.html</a><ul><li>特别备注：<ul><li>只是想看看面试题目，有没有新变化，且更新的这份题目有点陈旧了</li><li>不要误会我要跳槽啊，啊啊啊，哈哈哈</li></ul></li><li><a href="https://hellojw.github.io/">https://hellojw.github.io/</a> 基地更新方面<ul><li>额，6月29号和6月30号未更新</li></ul></li></ul></li></ul><p>2.学习方面</p><ul><li>1).重新回顾了一下nginx的部分知识点（索引目录方面）<ul><li>1.nginx 开启目录，映射到服务器的指定目录，类似于简单的视频文件共享小站</li><li>2.基于1，想用fancy美化一下目录结构 <a href="https://github.com/aperezdc/ngx-fancyindex" target="_blank" rel="noopener">https://github.com/aperezdc/ngx-fancyindex</a></li></ul></li><li>2).部署了一套 olaindex 的 环境<ul><li>步骤：<a href="https://github.com/WangNingkai/OLAINDEX/blob/master/docs/install.md" target="_blank" rel="noopener">https://github.com/WangNingkai/OLAINDEX/blob/master/docs/install.md</a></li><li>按照以上的步骤，基本上是傻瓜化操作了，很顺利就部署好了</li></ul></li><li>3).学习了一下ifps星际大陆的，想用区块链的一些概念来部署一套实现文件共享和存储的环境<ul><li>可惜，ifps官网我打不开。。。暂时先留个底</li></ul></li><li>这1).2).3).的关联性：<ul><li>没有去搜索更多的文件共享或视频在线播放的信息，均基于以往的运维知识所想到的，同时也是能够解决相关人员的基本需求的，如果一个深入的调研，相信还会有别的方案。</li><li>星际大陆，是一个朋友在大数据公司工作，正好他们单位已经把这个ifps用于广告营销等数据方面了，好奇才想部署一套尝尝鲜的</li></ul></li><li>重新手写整理了一下linux 启动过程等知识，后续有时间要更新到网络上</li><li>关于沙箱方面，做了一个很肤浅的了解：<ul><li>因为2019年kubeCon大会，才注意到了gvisor这个概念</li><li>以前用过sandbox mysql，在docker中，从英文单词上，都是沙箱沙盒的意思，但是具体有什么关联性，区别性，想整体搞懂一下，并且重新看一下原来自己在docker写的sandbox知识点</li><li><a href="https://github.com/google/gvisor" target="_blank" rel="noopener">https://github.com/google/gvisor</a></li><li><a href="https://katacontainers.io/" target="_blank" rel="noopener">https://katacontainers.io/</a></li><li><a href="https://github.com/kata-containers/documentation/blob/master/design/architecture.md" target="_blank" rel="noopener">https://github.com/kata-containers/documentation/blob/master/design/architecture.md</a></li><li>以前也玩过 xen（生产环境）、做过xen服务器web应用和DB迁移到 exsi ,想重新梳理一下虚拟化的东西，包括容器方面的东西</li></ul></li><li>想梳理一下 linux 环境下，增加资源后，如果通过不重启的方式，热加载资源：<ul><li>比如 vm 中的虚拟机，我增加了一块100G盘，我可以通过echo “- - -“ &gt;/sys/class/scsi_host/hostxxx/scan的方式加载出磁盘信息，这是因为什么呢？？</li><li>还有没有其他场景呢？？</li></ul></li><li>关于zabbix监控这一块，把通知发送到企业微信群里，配置已完成，遗留问题：<ul><li>zabbix dashboard显示“已送达”，但是企业微信群里收不到信息，可手动触发脚本，是能够发送到企业微信中的</li></ul></li><li>关于 azkaban 任务调度监控：<ul><li>能够发送到企业微信里，每个flow的执行情况</li><li>如何把它接入到zabbix中？？</li></ul></li></ul><h2 id="其他方面"><a href="#其他方面" class="headerlink" title="其他方面"></a>其他方面</h2><ul><li>关注了一下上海周边的房价，年底要落实买房了，哈哈哈，我自己攒的首付哦，赞赞赞</li><li>跟朋友逛街了，第一次穿热裤和高跟出游，拍照发朋友圈，获赞使我的虚荣心得到满足，哈哈哈</li><li>跟朋友去电影院看了部恐怖电影“碟仙”，感觉还不错耶，喜欢黄奕</li><li>给我家的狗狗，豆豆小公举，洗了个澡澡，香香的</li><li>炖了乌鸡汤，哈哈哈，放了红枣、当归、党参、枸杞、黄芪、小土豆，可好喝了</li><li>追综艺“这就是街舞2”，超爱“易烊千玺”，所以优酷他的“长安十二时”，我也追了。。。</li></ul><hr><p>天哪。。所以时间不是很够。。。都用在哪里去了呢。。。反思反思。。。后面还有很多事情要做呀</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;技术方面&quot;&gt;&lt;a href=&quot;#技术方面&quot; class=&quot;headerlink&quot; title=&quot;技术方面&quot;&gt;&lt;/a&gt;技术方面&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;更新方面&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;博客园更新了一下：运维面试相关的题目&lt;br&gt;&lt;a href=&quot;
+      
+    
+    </summary>
+    
+      <category term="杂七杂八的总结" scheme="https://hellojw.github.io/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="情感" scheme="https://hellojw.github.io/tags/%E6%83%85%E6%84%9F/"/>
+    
+      <category term="生活" scheme="https://hellojw.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>flags 太多啦</title>
