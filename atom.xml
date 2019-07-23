@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hellojw.github.io/"/>
-  <updated>2019-07-23T07:15:45.483Z</updated>
+  <updated>2019-07-23T07:34:51.932Z</updated>
   <id>https://hellojw.github.io/</id>
   
   <author>
@@ -21,16 +21,16 @@
     <link href="https://hellojw.github.io/2019/07/02/zhang-jie-yi-go-huan-jing-bian-liang/"/>
     <id>https://hellojw.github.io/2019/07/02/zhang-jie-yi-go-huan-jing-bian-liang/</id>
     <published>2019-07-02T11:34:47.000Z</published>
-    <updated>2019-07-23T07:15:45.483Z</updated>
+    <updated>2019-07-23T07:34:51.932Z</updated>
     
-    <content type="html"><![CDATA[<p>整理了一份思维导图，便于理解书籍章节，如下所示：</p><p><img src="D:%5Chexotest%5Csource%5Cimages%5CGo%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.png" alt></p>]]></content>
+    <content type="html"><![CDATA[<p>整理了一份思维导图，便于理解书籍章节，如下所示：</p><p><code>![avatar](../images/Go环境配置.png)</code> </p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;整理了一份思维导图，便于理解书籍章节，如下所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;D:%5Chexotest%5Csource%5Cimages%5CGo%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.png&quot; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;![avatar](../images/Go环境配置.png)&lt;/code&gt; &lt;/p&gt;
 
       
     
