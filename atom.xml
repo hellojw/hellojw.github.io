@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>小威威@基地之一</title>
+  <title>威无涯</title>
   
   <subtitle>学无止境</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hellojw.github.io/"/>
-  <updated>2019-07-23T07:10:28.594Z</updated>
+  <updated>2019-07-23T07:15:45.483Z</updated>
   <id>https://hellojw.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Go学习开篇</title>
+    <title>章一Go环境变量</title>
     <link href="https://hellojw.github.io/2019/07/02/zhang-jie-yi-go-huan-jing-bian-liang/"/>
     <id>https://hellojw.github.io/2019/07/02/zhang-jie-yi-go-huan-jing-bian-liang/</id>
     <published>2019-07-02T11:34:47.000Z</published>
-    <updated>2019-07-23T07:10:28.594Z</updated>
+    <updated>2019-07-23T07:15:45.483Z</updated>
     
     <content type="html"><![CDATA[<p>整理了一份思维导图，便于理解书籍章节，如下所示：</p><p><img src="D:%5Chexotest%5Csource%5Cimages%5CGo%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE.png" alt></p>]]></content>
     
