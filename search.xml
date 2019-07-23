@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Go学习开篇</title>
+      <link href="/2019/07/01/go-xue-xi-ji-hua/"/>
+      <url>/2019/07/01/go-xue-xi-ji-hua/</url>
+      
+        <content type="html"><![CDATA[<h2 id="学习-Go-目的"><a href="#学习-Go-目的" class="headerlink" title="学习 Go 目的"></a>学习 Go 目的</h2><ul><li>为了锻炼我的编程能力，能在我的github上多放点有价值的编程作品</li><li>为了提升自己的意志力和耐力</li><li>为了充实生活，不浪费光阴</li><li>突破自身瓶颈</li></ul><h2 id="学习-Go-途径"><a href="#学习-Go-途径" class="headerlink" title="学习 Go 途径"></a>学习 Go 途径</h2><ul><li>主要网站：Go 语言中文网</li><li>主要视频途径：Go 36 讲</li><li>主要依附书籍：该书籍是网络下载的，未注明作者和来源，PDF书名是go+web+编程，感觉书籍目录清晰，有利于学习层次的推进和助力</li></ul><h2 id="学习-Go-周期"><a href="#学习-Go-周期" class="headerlink" title="学习 Go 周期"></a>学习 Go 周期</h2><ul><li>2019年7月、8月、9月，熟练语法</li><li>2019年10月、11月、12月，找一个自己喜欢的项目，模仿编程</li><li>2020年1月、2月、3月、4月，项目实践，最终是让这个项目产生金钱效益</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Go学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技术 </tag>
+            
+            <tag> 编程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>这两天干了啥</title>
       <link href="/2019/06/30/zhe-liang-tian-gan-liao-sha/"/>
       <url>/2019/06/30/zhe-liang-tian-gan-liao-sha/</url>
@@ -14,33 +41,6 @@
       <categories>
           
           <category> 杂七杂八的总结 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 情感 </tag>
-            
-            <tag> 生活 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>flags 太多啦</title>
-      <link href="/2019/06/28/li-qun-flags/"/>
-      <url>/2019/06/28/li-qun-flags/</url>
-      
-        <content type="html"><![CDATA[<h2 id="1-是什么？"><a href="#1-是什么？" class="headerlink" title="1.是什么？"></a>1.是什么？</h2><p>flags：</p><ul><li>重新学习 Linux</li><li>重新学习 SHELL 和 Python</li><li>重新学习 HTML 、CSS  、JS</li><li>以上学习的截止日期：2020年1月1日</li></ul><h2 id="2-为什么"><a href="#2-为什么" class="headerlink" title="2.为什么"></a>2.为什么</h2><ul><li>想扫一下自己的技术盲区，查漏补缺</li><li>想变得更好</li></ul><h2 id="3-怎么样"><a href="#3-怎么样" class="headerlink" title="3.怎么样"></a>3.怎么样</h2><ul><li>线上线下等等方式有很多，看自己能否坚持下去了</li><li>主要还是要坚持啊</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 小目标 </category>
           
       </categories>
       

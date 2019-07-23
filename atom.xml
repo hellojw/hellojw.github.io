@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hellojw.github.io/"/>
-  <updated>2019-07-01T12:25:19.715Z</updated>
+  <updated>2019-07-23T02:56:19.152Z</updated>
   <id>https://hellojw.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Go学习开篇</title>
+    <link href="https://hellojw.github.io/2019/07/01/go-xue-xi-ji-hua/"/>
+    <id>https://hellojw.github.io/2019/07/01/go-xue-xi-ji-hua/</id>
+    <published>2019-07-01T11:54:00.000Z</published>
+    <updated>2019-07-23T02:56:19.152Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="学习-Go-目的"><a href="#学习-Go-目的" class="headerlink" title="学习 Go 目的"></a>学习 Go 目的</h2><ul><li>为了锻炼我的编程能力，能在我的github上多放点有价值的编程作品</li><li>为了提升自己的意志力和耐力</li><li>为了充实生活，不浪费光阴</li><li>突破自身瓶颈</li></ul><h2 id="学习-Go-途径"><a href="#学习-Go-途径" class="headerlink" title="学习 Go 途径"></a>学习 Go 途径</h2><ul><li>主要网站：Go 语言中文网</li><li>主要视频途径：Go 36 讲</li><li>主要依附书籍：该书籍是网络下载的，未注明作者和来源，PDF书名是go+web+编程，感觉书籍目录清晰，有利于学习层次的推进和助力</li></ul><h2 id="学习-Go-周期"><a href="#学习-Go-周期" class="headerlink" title="学习 Go 周期"></a>学习 Go 周期</h2><ul><li>2019年7月、8月、9月，熟练语法</li><li>2019年10月、11月、12月，找一个自己喜欢的项目，模仿编程</li><li>2020年1月、2月、3月、4月，项目实践，最终是让这个项目产生金钱效益</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;学习-Go-目的&quot;&gt;&lt;a href=&quot;#学习-Go-目的&quot; class=&quot;headerlink&quot; title=&quot;学习 Go 目的&quot;&gt;&lt;/a&gt;学习 Go 目的&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;为了锻炼我的编程能力，能在我的github上多放点有价值的编程作品&lt;/li&gt;
+&lt;
+      
+    
+    </summary>
+    
+      <category term="Go学习" scheme="https://hellojw.github.io/categories/Go%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="技术" scheme="https://hellojw.github.io/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="编程" scheme="https://hellojw.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>这两天干了啥</title>
@@ -39,36 +68,6 @@
     </summary>
     
       <category term="杂七杂八的总结" scheme="https://hellojw.github.io/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB%E7%9A%84%E6%80%BB%E7%BB%93/"/>
-    
-    
-      <category term="情感" scheme="https://hellojw.github.io/tags/%E6%83%85%E6%84%9F/"/>
-    
-      <category term="生活" scheme="https://hellojw.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>flags 太多啦</title>
-    <link href="https://hellojw.github.io/2019/06/28/li-qun-flags/"/>
-    <id>https://hellojw.github.io/2019/06/28/li-qun-flags/</id>
-    <published>2019-06-28T10:54:00.000Z</published>
-    <updated>2019-06-28T11:14:01.960Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1-是什么？"><a href="#1-是什么？" class="headerlink" title="1.是什么？"></a>1.是什么？</h2><p>flags：</p><ul><li>重新学习 Linux</li><li>重新学习 SHELL 和 Python</li><li>重新学习 HTML 、CSS  、JS</li><li>以上学习的截止日期：2020年1月1日</li></ul><h2 id="2-为什么"><a href="#2-为什么" class="headerlink" title="2.为什么"></a>2.为什么</h2><ul><li>想扫一下自己的技术盲区，查漏补缺</li><li>想变得更好</li></ul><h2 id="3-怎么样"><a href="#3-怎么样" class="headerlink" title="3.怎么样"></a>3.怎么样</h2><ul><li>线上线下等等方式有很多，看自己能否坚持下去了</li><li>主要还是要坚持啊</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;1-是什么？&quot;&gt;&lt;a href=&quot;#1-是什么？&quot; class=&quot;headerlink&quot; title=&quot;1.是什么？&quot;&gt;&lt;/a&gt;1.是什么？&lt;/h2&gt;&lt;p&gt;flags：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;重新学习 Linux&lt;/li&gt;
-&lt;li&gt;重新学习 SHELL 和 P
-      
-    
-    </summary>
-    
-      <category term="小目标" scheme="https://hellojw.github.io/categories/%E5%B0%8F%E7%9B%AE%E6%A0%87/"/>
     
     
       <category term="情感" scheme="https://hellojw.github.io/tags/%E6%83%85%E6%84%9F/"/>
