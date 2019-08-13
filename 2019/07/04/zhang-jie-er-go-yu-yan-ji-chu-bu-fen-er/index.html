@@ -4,13 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="章节二Go语言基础之部分一, 威无涯">
-    <meta name="description" content="说明
-编译速度非常快，比C语言编译快
+    <meta name="keywords" content="章节二Go语言基础之部分二, 威无涯">
+    <meta name="description" content="流程和函数流程控制
+流程控制分三大类：条件判断，循环控制和无条件跳转
 
-二十五个关键字有：
-break      default       func       interface       select
-case       defer         go    ">
+if
+Go 里面 if 条件判断语句中不需要括号，如下代码所示：
+if x &amp;gt; 10 {
+    fmt.Println(&amp;quot;x is greater t">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@ case       defer         go    ">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>章节二Go语言基础之部分一 | 威无涯</title>
+    <title>章节二Go语言基础之部分二 | 威无涯</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -197,13 +198,13 @@ case       defer         go    ">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        章节二Go语言基础之部分一
+                        章节二Go语言基础之部分二
                     </div>
                 </div>
             </div>
@@ -342,21 +343,21 @@ case       defer         go    ">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-03
+                    2019-07-04
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        3.9k
+                        3.6k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        16 分
+                        15 分
                     </div>
                     
                 
@@ -372,345 +373,437 @@ case       defer         go    ">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><ul>
-<li><p>编译速度非常快，比C语言编译快</p>
-</li>
-<li><p>二十五个关键字有：</p>
-<pre><code>break      default       func       interface       select
-case       defer         go         map             struct
-chan       else          goto       package         switch
-const      fallthrough   if         range           type
-continue   for           import     return          var</code></pre><h3 id="Hello-word-是怎么跑起来的"><a href="#Hello-word-是怎么跑起来的" class="headerlink" title="Hello word 是怎么跑起来的"></a>Hello word 是怎么跑起来的</h3></li>
+                <h2 id="流程和函数"><a href="#流程和函数" class="headerlink" title="流程和函数"></a>流程和函数</h2><h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3><ul>
+<li>流程控制分三大类：条件判断，循环控制和无条件跳转</li>
 </ul>
-<pre><code>package main
-import &quot;fmt&quot;
+<h4 id="if"><a href="#if" class="headerlink" title="if"></a>if</h4><ul>
+<li><p>Go 里面 if 条件判断语句中不需要括号，如下代码所示：</p>
+<pre><code>if x &gt; 10 {
+    fmt.Println(&quot;x is greater than 10&quot;)
+}
+else {
+    fmt.Println(&quot;x is less than 10&quot;)
+}</code></pre></li>
+<li><p>if 条件判断语句中允许声明一个变量，这个变量的作用域只能在该条件逻辑块内，其他地方无效</p>
+<pre><code>if x := computerdValue(); x &gt; 10 {
+    fmt.Println(&quot;x is greater than 10&quot;)
+}
+else {
+    fmt.Println(&quot;x is less than 10&quot;)
+}
+fmt.Println(x)  // 这样调用就会编译出错，因为 x 是条件里面的变量，超出了作用域</code></pre></li>
+<li><p>多个条件的时候如下所示：</p>
+<pre><code>if integer == 3 {
+    fmt.Println(&quot;The integer is equal to 3&quot;)
+} else if integer &lt; 3 {
+    fmt.Println(&quot;The integer is less than 3&quot;)
+} else {
+    fmt.Println(&quot;The integer is greater than 3&quot;)
+}</code></pre></li>
+</ul>
+<h4 id="goto"><a href="#goto" class="headerlink" title="goto"></a>goto</h4><ul>
+<li><p>用 goto 跳转到必须在当前函数内定义的标签</p>
+<pre><code>func myFunc() {
+    i := 0
+    Here:        //这行的第一个词，以冒号结束作为标签
+        println(i)
+    i++
+        goto Here   // 跳转到 Here 去
+}</code></pre><p>标签名是大小写敏感的。</p>
+</li>
+</ul>
+<h4 id="for"><a href="#for" class="headerlink" title="for"></a>for</h4><ul>
+<li><p>作用：循环读取数据、控制逻辑、迭代操作</p>
+</li>
+<li><p>语法：</p>
+<pre><code>for expression1;expression2;expression3
+{
+    //....
+}</code></pre><p>expression1、expression2 和 expression3 都是表达式，其中 expression1 和 expression3 是变量声明或函数调用返回值之类的，expression2 是用来条件判断，expression1 在循环开始之前调用，expression3 在每轮循环结束之时调用。</p>
+</li>
+<li><p>举例：</p>
+<pre><code>package  main  import  &quot;fmt&quot;
 func main(){
-    fmt.Printf(&quot;Hello,JiangWei&quot;)
+    sum := 0;
+    for index := 0; index &lt; 10 ; index++ 
+    {  sum += index   }
+    fmt.Println(&quot;sum is equal to &quot;, sum)
+}
+
+//上面程序的输出：sum is equal to 45</code></pre></li>
+<li><p>进行多个赋值操作，由于 Go 里面没有操作，那么可使用平行赋值i，j = i+1，j-1</p>
+</li>
+<li><p>可忽略 expression1 和 expression3 ：</p>
+<pre><code>sum := 1 
+for ; sum &lt; 1000 ; 
+{ sum += sum }
+上面的代码中 ; 也可以忽略，那么久变成如下的代码了：
+sum :=1 for sum &lt; 1000 { sum += sum}    ///这个就是 while 的功能了</code></pre></li>
+<li><p>在循环里有两个关键操作 break 和 continue , break 操作时跳出当前循环，continue 是跳过本次循环，当嵌套过深的时候，break 可以配合标签使用，即跳转至标签所指定的位置，详细例子如下：</p>
+<pre><code>for index := 10 ; index &gt; 0 ; index --
+{
+    if index == 5 {
+        break              //或 continue
+    }
+    fmt.Println(index)
+}
+// break 打印出 10、9、8、7、6
+// continue 打印出 10、9、8、7、6、5、4、3、2、1 </code></pre><p>break 和 continue 还可跟着标号，用来跳到多重循环的外层循环。</p>
+</li>
+<li><p>for  配合 range 可用于读取 slice 和 map 的数据：</p>
+<pre><code>for  k,v := rang map
+{
+    fmt.Println(&quot;map&#39;s key:&quot;,k)
+    fmt.Println(&quot;map&#39;s val:&quot;,v)
+}</code></pre></li>
+<li><p>由于 Go 支持“多指返回”，而对于“声明而未被调用”的变量，编译器会报错，在这种情况下，可使用_来丢弃不需要的返回值：</p>
+<pre><code>for _, v := range
+map{ fmt.Println(&quot;map&#39;s val:&quot;,v) }</code></pre></li>
+</ul>
+<h4 id="Switch"><a href="#Switch" class="headerlink" title="Switch"></a>Switch</h4><ul>
+<li><p>语法如下：</p>
+<pre><code>switch  sExpr {
+case expr1:
+      some instructions
+case expr2:
+      some other instructions
+case expr3:
+      some other instructions
+default:
+      other code
+}</code></pre><p>sExpr 和 expr1、expr2、expr3 的类型必须一致。</p>
+</li>
+<li><p>Go 的 switch 非常灵活，表达式不必是常量或整数，执行的过程从上至下，直到找到匹配项；</p>
+</li>
+<li><p>如果 switch 没有表达式，它会匹配 true</p>
+<pre><code>i := 10
+switch i {
+case 1:
+    fmt.Println(&quot;i is equal to 1&quot;)
+case 2,3,4:               // 此处 case 聚合了多值
+    fmt.Println(&quot;i is equal to 2,3 or 4&quot;)
+case 10:
+    fmt.Println(&quot;i is equal to 10&quot;)
+default:
+    fmt.Println(&quot;All I know is that i is an integer&quot;)
+}</code></pre></li>
+<li><p>switch 默认相当于每个 case 最后带有 break，匹配成功后不会自动向下执行其他 case，而是跳出整个 switch，但是可使用 fallthrough 强制执行后面的 case 代码：</p>
+<pre><code>integer := 6
+switch integer{
+case 4:
+     fmt.Println(&quot;The integer was &lt;= 4&quot;)
+     fallthrough
+case 5:
+     fmt.Println(&quot;The integer was &lt;= 5&quot;)
+     fallthrough
+case 6:
+     fmt.Println(&quot;The integer was &lt;= 6&quot;)//输出 The integer was &lt;= 6并继续执行下一个case
+     fallthrough
+case 7:
+     fmt.Println(&quot;The integer was &lt;= 7&quot;)//输出 The integer was &lt;= 7并继续执行下一个case
+     fallthrough
+case 8:
+     fmt.Println(&quot;The integer was &lt;=8&quot;)//输出 The integer was &lt;= 8并继续执行下一个case
+     fallthrough
+default:
+     fmt.Println(default case)//输出default case并跳出整个switch
+}</code></pre></li>
+</ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
+<li><p>函数是 Go 里面的核心设计，通过关键字 func 来声明，格式如下：</p>
+<pre><code>func  funcName(input1 type1,input2 type2) (output1 type1,output2 type2){
+    return value1, value2
 }</code></pre><ul>
-<li><p>go 是通过package来组织的，后面跟对应的函数名（包名）</p>
+<li><p>函数可以有一个或多个参数，每个参数后面带有类型，通过,分隔</p>
 </li>
-<li><p>package中的main是可以独立运行的包，编译后会产生可执行文件</p>
+<li><p>函数可以返回多个值</p>
 </li>
-<li><p>非main包，编译后都会产生*.a文件，一般存放在在$GOPATH/pkg下</p>
+<li><p>上面返回值声明了两个变量output1和output2，若不想声明也可以，直接就两个类型</p>
 </li>
-<li><p>每一个可独立运行的Go程序，必定包含一个package main，且必定包含一个主函数main（入口函数），这个Hello world中的mai’n函数无参数无返回值</p>
+<li><p>若只有一个返回值且不声明返回值变量，则可省略包括返回值的括号</p>
 </li>
-<li><p>import “fmt”，引入了fmt包，fmt包里定义了函数Printf，<pkgname>.<funcname>【fmt.Printf】的调用方式，和 Python 十分类似</funcname></pkgname></p>
+<li><p>若没有返回值，则直接省略最后的返回信息</p>
 </li>
-<li><p>Go package 和 Python 中的 package  类似，利于模块化和可重用性</p>
-<ul>
-<li>模块化：把程序拆分成多个模块</li>
-<li>可重用性：每个模块都能被其他应用程序反复使用</li>
-</ul>
+<li><p>若有返回值，则必须在函数的外层添加 return 语句</p>
 </li>
-<li><p>Go 支持UTF-8，任何字符都可直接输出，甚至可以用UTF-8中的任何字符作为标识符 ，UTF-8的发明者也是Go 的发明者</p>
-</li>
-</ul>
-<h2 id="Go-基础"><a href="#Go-基础" class="headerlink" title="Go 基础"></a>Go 基础</h2><h3 id="Go-定义变量"><a href="#Go-定义变量" class="headerlink" title="Go 定义变量"></a>Go 定义变量</h3><ul>
-<li><p>最基本的定义变量的方式：【使用 var 关键字，定义全局变量】</p>
-<pre><code>var  variableName  type   //定义一个名称为&quot;variableName&quot;,类型为&quot;type&quot;的变量
-var  vname1,vname2,vanme3 type //定义多个变量，三个类型为&quot;type&quot;的变量
-var  variableName type=value  //定义一个变量并初始化值
-var  vname1,vname2,vname3 type=v1,v2,v3 //定义多个变量并初始化对应的值
-var  vname1,vname2,vname3 = v1,v2,v3 //忽略声明类型，定义多个变量并初始化对应的值
-vname1,vname2,vname3: = v1,v2,v3 //:=取代了var和type，简短声明，定义多个变量并初始化对应的值，但是该方法只能用在函数内部，否则在函数外部使用则无法编译</code></pre></li>
-<li><p>_(下划线)是个特殊的变量名，任何赋予它的值都会被丢弃</p>
-<pre><code>_,b:=34,35 //将值赋予给变量，同时丢弃34</code></pre></li>
-<li><p>对于已声明但未使用的变量，在编译阶段会报错</p>
+<li><p>举个例子：</p>
 <pre><code>package main
+import  &quot;fmt&quot;
+func  max(a,b int) int
+{
+    if a &gt; b { return a } 
+    return b
+}
 func main()
 {
-    var i int
-}
-//上述代码会因为声明了i但未使用而编译报错</code></pre></li>
-</ul>
-<h3 id="Go-常量"><a href="#Go-常量" class="headerlink" title="Go 常量"></a>Go 常量</h3><ul>
-<li><p>含义：程序编译阶段就确定下来的值，程序在运行时无法改变该值</p>
-</li>
-<li><p>常量类型：数值、布尔值或字符串等</p>
-</li>
-<li><p>语法如下：</p>
-<pre><code>const  constantName = value</code></pre></li>
-<li><p>常量声明的例子：</p>
-<pre><code>const Pi float32 = 3.1414926  // 明确指定常量的类型
-const Pi = 3.1415926
-const i = 1000 const
-MaxThread = 10 const
-prefix = &quot;astaxie_&quot;</code></pre></li>
-</ul>
-<h3 id="内置基础类型"><a href="#内置基础类型" class="headerlink" title="内置基础类型"></a>内置基础类型</h3><h4 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h4><ul>
-<li><p>布尔值的类型为bool，值是true或false，默认是false</p>
-<pre><code>var  isActive bool  //全局变量声明
-var  enabled,disabled = true,false //忽略类型的声明
-func test() {
-    var available bool  //一般声明
-    valid := false      //简短声明
-    available = true   //赋值操作    
-}</code></pre></li>
-</ul>
-<h4 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h4><ul>
-<li><p>包括：整数、浮点数、复数</p>
-</li>
-<li><p>整数类型分：无符号和带符号</p>
-<ul>
-<li><p>Go 同时支持 int 和 uint，这两种类型的长度相同</p>
-<ul>
-<li>书中不太理解的话：当前 gcc 和 gccgo 编译器在 32 位和 64 位平台上都使用 32 位来表示 int 和 uint，但未来在 64 位平台上可能增加到 64 位</li>
-</ul>
-</li>
-<li><p>Go 里面也有直接定义好位数的类型：rune,int8,int16,int32,int64 和 byte,unit8，uint16，uint32，unit64</p>
-<ul>
-<li>rune 是 int32 的别称，byte 是 uint8 的别称</li>
-</ul>
-</li>
-<li><p>这些类型的变量之间不允许相互赋值或操作，否则在编译时会引起报错</p>
-<pre><code>var a int8    
-var b int32
-c:= a + b
-以上，int8 和 int32 不可以互用</code></pre></li>
-</ul>
-</li>
-<li><p>浮点数类型有 float32 和 float64，默认是 float64，没有 float 类型</p>
-</li>
-<li><p>复数，默认类型是complex128 ( 64 位实数 + 64 位虚数)</p>
-<ul>
-<li><p>也有complex64 ( 32 位实数 + 32 位虚数)</p>
-</li>
-<li><p>复数的形式为 RE + IMi，其中RE是实数部分，IM是虚数部分，i是虚数单位</p>
-<pre><code>var  c  complex64 = 5+5i
-fmt.Printf(&quot;Value is: %v&quot;,c)  //output:(5+5i)</code></pre></li>
+    x := 3
+    y := 4
+    z := 5
+    max_xy := max(x,y)  //调用函数max(x,y)
+    max_xz := max(x,z)  //调用函数max(x,z)
+    fmt.Printf(&quot;max(%d, %d) = %d\n&quot;,x,y,max_xy)
+    fmt.Printf(&quot;max(%d, %d) = %d\n&quot;,x,z,max_xz)
+    fmt.Printf(&quot;max(%d, %d) = %d\n&quot;,y,z,max(y,z))
+}</code></pre><ul>
+<li>max 函数有两个参数，类型都是 int ，第一个变量的类型可省略（即 a,b int,而非 a int,b int），默认为离它最近的类型，同理多于 2 个同类型的变量或返回值。同时它的返回值就是一个类型，这个就是省略写法。</li>
 </ul>
 </li>
 </ul>
-<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><ul>
-<li><p>Go 中的字符串都是采用 UTF-8 字符集编码</p>
-</li>
-<li><p>字符串是用一对双引号（“”）或反引号（``）括起来定义的，类型是string</p>
-<pre><code>var frenchHello string   //声明变量为字符串的一般方法
-var  emptyString string = &quot;&quot;  //声明了一个字符串变量，初始化为空字符串
-func test() {
-    no,yes,maybe := &quot;no&quot;,&quot;yes&quot;,&quot;maybe&quot; //简短声明多个变量
-    frenchHello = &quot;Bonjour&quot;  // 赋值
-}</code></pre></li>
-<li><p>转换修改字符串值</p>
-<pre><code>var s string = &quot;hello&quot; s[0] = &#39;c&#39;  //代码编译时会报错，因为Go中字符串不可变，此处变更了字符串</code></pre><p>转换修改如下：</p>
-<pre><code>s := &quot;hello&quot;
-c := []byte(s) //将字符串 s 转换为 []byte 类型
-c[0] = &#39;c&#39;  s2 := string(c) // 再转换回 string 类型
-fmt.Printf(&quot;%s\n&quot;,s2)</code></pre></li>
-<li><p>连接两个字符串（也能达到修改字符串的效果）</p>
-<pre><code>s := &quot;hello,&quot; 
-m := &quot;World&quot;
-a := s + m  //使用 + 操作符来连接两个字符串
-fmt.Printf(&quot;%s\n&quot;,a)</code></pre><pre><code>切片操作修改字符串：
-s := &quot;hello&quot;
-s = &quot;c&quot; + s[1:] 
-fmt.Printf(&quot;%s\n&quot;,s)</code></pre></li>
-<li><p>通过`声明多行字符串</p>
-<pre><code>m := ` hello
-world `</code></pre><p>`括起的字符串为 Raw 字符串，即字符串再代码中的形式就是打印时的形式，它没有字符转义，换行也将原样输出</p>
 </li>
 </ul>
-<h4 id="错误类型"><a href="#错误类型" class="headerlink" title="错误类型"></a>错误类型</h4><ul>
-<li><p>error 类型专门用来处理错误信息，Go 的 package 里有个 error 包专门来处理错误：</p>
-<pre><code>err := errors.New(&quot;emit macho dwarf: elf header corrupted&quot;)
-if err !=nil
+<h4 id="多个返回值"><a href="#多个返回值" class="headerlink" title="多个返回值"></a>多个返回值</h4><ul>
+<li><p>例子如下：</p>
+<pre><code>package main 
+import  &quot;fmt&quot;
+func SumAndProduct(A, B int) (int, int)
 {
-    fmt.Printf(err)
+    return A+B, A*B
+}
+func main() {
+    x := 3
+    y := 4
+    xPLUSy, xTIMESy := SumAndProduct(x, y)
+    fmt.Printf(&quot;%d + %d = %d\n&quot;, x, y, xPLUSy)
+    fmt.Printf(&quot;%d * %d = %d\n&quot;, x, y, xTIMESy)
+}</code></pre><ul>
+<li><p>上述代码直接返回了两个参数，也可以命名返回参数的变量</p>
+</li>
+<li><p>上述代码只是用了两个类型，也可以改成如下定义：</p>
+<pre><code>func SumAdnProduct(A, B int) (add int, Multiplied int) 
+{
+    add = A+B
+    Multiplied = A*B
+    return
+}</code></pre><ul>
+<li>上述代码返回的时候不带上变量名，因为直接在函数里初始化了</li>
+<li>如果函数是导出的（首字母大写），官方建议：最好命令返回值，否则会造成生成的文档可读性差</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="变参"><a href="#变参" class="headerlink" title="变参"></a>变参</h4><ul>
+<li><p>语法：</p>
+<pre><code>func myfunc(arg ...int) {}</code></pre><p>arg …int 表明这个函数接受不定数量的参数。且这些参数的类型全部是 int。</p>
+</li>
+<li><p>在函数体中，变量arg是一个int的slice【不太理解】：</p>
+<pre><code>for _, n := range arg {
+    fmt.Printf(&quot;And the number is: %d\n&quot;, n)
 }</code></pre></li>
 </ul>
-<h3 id="Go-数据底层的存储"><a href="#Go-数据底层的存储" class="headerlink" title="Go 数据底层的存储"></a>Go 数据底层的存储</h3><ul>
-<li>Go 数据格式的存储：<a href="https://research.swtch.com/godata" target="_blank" rel="noopener">https://research.swtch.com/godata</a> （介绍 Go 数据结构）</li>
-<li>这些基础类型都是分配了一块内存，然后存储了相应的值</li>
+<h4 id="传值与传指针"><a href="#传值与传指针" class="headerlink" title="传值与传指针"></a>传值与传指针</h4><ul>
+<li><p>当传一个参数值到被调用函数里面时，实际上是传了这个值的一份copy，当在被调用函数中修改参数值的时候，调用函数中相应实参不会发生任何变化，因为数值变化只作用在 copy 上。</p>
+<pre><code>package main
+import &quot;fmt&quot;
+func add1(a int) int
+{
+    a = a+1    // 改变了 a 的值
+    return a   // 返回一个新值
+}
+func main()
+{
+    x := 3
+    fmt.Println(&quot;x = &quot;, x)  // x=3
+    x1 := add1(x)               
+    fmt.Println(&quot;x+1 = &quot;, x1)   // x+1 = 4 ,因为 add1(3)=3+1=4
+    fmt.Println(&quot;x = &quot;, x)      // x = 3
+}</code></pre><p>当我们调用 add1 的时候，add1 接受的参数 实际是 x 的 copy，而不是 x 本身。</p>
+<p>若要传这个 x 本身，则需要用到指针。</p>
+</li>
+<li><p>变量在内存中是存放于一定地址上的，修改变量实际是修改变量地址处的内存。上述代码中只有 add1 函数知道 x 变量所在的地址，才能修改 x 变量的值。将 x 所在地址 &amp;x 传入函数，并将函数的参数类型由 int 改为 *int，即修改为指针类型，才能在函数中修改 x 变量的值。此时参数仍然是按 copy 传递的，而传递的是一个指针：</p>
+<pre><code>package main 
+import  &quot;fmt&quot;
+func  add1(a *int) int{
+    *a = *a+1
+    return *a
+}
+func main() {
+    x := 3
+    fmt.Println(&quot;x = &quot;, x)
+    x1 := add1(&amp;x)
+    fmt.Println(&quot;x+1 = &quot;, x1)  // x+1 =4
+    fmt.Println(&quot;x = &quot;, x)     // x=4
+}</code></pre></li>
+<li><p>传指针的好处：</p>
+<ul>
+<li>传指针使得多个函数能操作同一个对象</li>
+<li>传指针比较轻量级（8 bytes）, 只是传内存地址</li>
+<li>可用指针传递体积大的结构体</li>
+<li>Go 语言中 string ，slice ，map 这三种类型的实现机制类似指针，所以可直接传递，而不用取地址后传递指针。（注：若函数需改变 slice 的长度，则仍需要取地址传递指针）</li>
 </ul>
-<h3 id="一些技巧"><a href="#一些技巧" class="headerlink" title="一些技巧"></a>一些技巧</h3><h4 id="分组声明"><a href="#分组声明" class="headerlink" title="分组声明"></a>分组声明</h4><ul>
-<li><p>声明多个常量、变量或导入多个包时，可采用分组的方式进行声明</p>
-<pre><code>import &quot;fmt&quot; import &quot;os&quot;
-
-const i = 100 const
-pi = 3.1415 const
-prefix = &quot;Go_&quot;
-
-var i int var pi
-float32 var
-prefix string</code></pre><p>上述代码可分组写成如下形式：</p>
-<pre><code>import( &quot;fmt&quot;  &quot;os&quot;)
-const( i=100 pi=3.1415 prefix=&quot;Go_&quot;)
-var( i int
-     pi float32
-     prefix string
-)</code></pre></li>
-<li><p>除非被显式设置为其他值或iota，否则每个const分组的第一个常量被默认设置为它的0值，第二及后续的常量被默认设置为它前面那个常量的值，如果前面那个常量的值为iota，则它被设置为iota</p>
 </li>
 </ul>
-<h4 id="iota-枚举"><a href="#iota-枚举" class="headerlink" title="iota 枚举"></a>iota 枚举</h4><ul>
-<li><p>iota 作为 go 二十五个关键字之一，用来声明 enum，它默认开始值是0，每调用一次加1：</p>
-<pre><code>const( x = iota  // x==0
-       y = iota  // y==1
-       z = iota  // z==2
-       w         // w==3 常量声明省略值时，默认和之前的一个值相同，即此处隐式地说w=iota
+<h4 id="defer"><a href="#defer" class="headerlink" title="defer"></a>defer</h4><ul>
+<li><p>defer : 延迟语句</p>
+</li>
+<li><p>可在函数中添加多个 defer 语句</p>
+</li>
+<li><p>当函数执行到最后时，这些 defer 语句会按照逆序执行，最后该函数返回。特别是当在进行一些打开资源的操作时，遇到错误需要提前返回，在返回前关闭相应资源时不易造成资源泄露等问题</p>
+<pre><code>//打开资源的操作：
+func ReadWrite() bool
+{
+    file.Open(&quot;file&quot;)
+    if failureX
+     {
+         file.Close()
+         return false
+     }
+     if failureY
+     {
+         file.Close()
+         return false
+     }
+     file.Close()
+     return true
+}</code></pre><p>加入defer后：</p>
+<pre><code>func ReadWrite() bool
+{
+    file.Open(&quot;file&quot;)
+    defer file.Close()
+    if failureX {
+        return false
+    }
+    if failureY {
+        reture false
+    }
+    return true
+}</code></pre></li>
+</ul>
+<p>​       在defer后指定的函数会在函数退出前调用。</p>
+<p>​      如果有很多调用defer，那么defer是采用后进先出模式，所以如下代码会输出  4   3    2    1   0      </p>
+<pre><code>for i := 0;i &lt; 5;i++ {  defer  fmt.Printf(&quot;%d&quot;,i)}</code></pre><h4 id="函数作为值、类型"><a href="#函数作为值、类型" class="headerlink" title="函数作为值、类型"></a>函数作为值、类型</h4><ul>
+<li><p>在 Go 中函数也是一种变量，可通过 type 来定义它，它的类型就是所有拥有相同的参数、相同的返回值</p>
+<pre><code>type typeName  
+func(input1 inputType1 [, input2 inputType2 [,...]) (result1 resultType)</code></pre></li>
+<li><p>把函数作为类型，就可以把这个类型的函数当作值来传递：</p>
+<pre><code>package  main 
+import  &quot;fmt&quot; 
+type testInt func(int) bool  //声明了一个函数类型
+func isOdd(integer int) bool
+{
+    if integer%2 == 0
+    {
+        return false
+    }
+    return true
+}
+func isEven(integer int) bool
+{
+    if integer%2 == 0
+    {
+        return true
+    }
+    return false
+}
+// 声明的函数类型在这个地方当作了一个参数
+func filter(slice []int, f testInt) []int
+{
+    var result []int 
+    for _, value := range slice {
+        if f(value){
+            result = append(result, value)
+        }
+    }
+    return result
+}
+func main(){
+    silice := []int {1,2,3,4,5,7}
+    fmt.Println(&quot;slice = &quot;,slice)
+    odd := filter(slice, isOdd) //函数当作值来传递
+    fmt.Println(&quot;Odd elements of slice are: &quot;, odd)
+    even := filter(slice, isEven)  // 函数当作值来传递
+    fmt.Println(&quot;Even elements of slice are: &quot;, even)
+}</code></pre><p>上述代码可知 testInt 这个类型是一个函数类型，两个filter函数的参数和返回值与testInt类型一致。</p>
+<p>函数当作值和类型非常适用于写一些通用接口，能实现多种逻辑且使程序灵活。</p>
+</li>
+</ul>
+<h4 id="Panic-和-Recover"><a href="#Panic-和-Recover" class="headerlink" title="Panic 和 Recover"></a>Panic 和 Recover</h4><ul>
+<li><p>Go 使用 panic 和 recover 机制当作异常机制，用于抛出异常。功能强大但需慎用。</p>
+</li>
+<li><p>Panic</p>
+<ul>
+<li>是一个内建函数，可中断原有的控制流程</li>
+<li>当函数 F 调用 panic，函数 F 的执行被中断，但 F 中的延迟函数会正常执行，然后 F 返回调用它的地方。在调用的地方，F 的行为就像调用了 panic，这一过程继续向上，直到发生 panic 的 goroutine 中所有调用的函数返回，此时程序退出。</li>
+<li>程序 panic 有时是因为直接调用 panic 函数产生，有时是由运行时错误产生，比如访问越界的数组。</li>
+</ul>
+</li>
+<li><p>Recover</p>
+<ul>
+<li><p>是一个内建函数，可让进入 panic 流程中的 goroutine 恢复过来。</p>
+</li>
+<li><p>recover 仅在延迟函数中有效。在正常的执行过程中，调用 recover 会返回 nil，并无其他任何效果。</p>
+</li>
+<li><p>如果当前的 goroutine 陷入 panic，调用 recover 可捕获到 panic 的输入值，且恢复正常的执行。</p>
+</li>
+<li><p>下面这个函数演示如何在过程中使用 panic var user = os.Getenv(“USER”)</p>
+<pre><code>func init()
+{
+    if user == &quot; &quot;{
+        panic(&quot;no value for $USER&quot;)
+    }
+}</code></pre></li>
+<li><p>下面这个函数检查作为其参数的函数在执行时是否会产生 panic :</p>
+<pre><code>func throwsPanic(f func()) (b bool)
+{
+    defer func(){
+        if x := recover();
+        x != nil{
+            b = true
+        }
+    }()
+    f()   // 执行函数 f， 如果 f 中出现了 panic ，即可恢复过来
+   return 
+}</code></pre></li>
+</ul>
+</li>
+</ul>
+<h4 id="main-函数和-init"><a href="#main-函数和-init" class="headerlink" title="main 函数和 init"></a>main 函数和 init</h4><ul>
+<li>Go 的两个保留函数：init  函数（能应用于所有的 package） 和 main 函数（只能应用于 package main）。</li>
+<li>这两个函数在定义时不能有任何的参数和返回值</li>
+<li>从可读性和可维护性来说，建立在一个package中每个文件只写一个init函数，而非多个任意多个init函数</li>
+<li>Go 程序会自动调用 init() 和 main()</li>
+<li>每个package 的 init 函数都是可选的，但package main 必须包含一个main函数</li>
+<li>main函数引入包初始化执行过程：<ul>
+<li>程序的初始化和执行都起始于main包，若main包还导入了其他包，那么在编译时会依次导入其他包</li>
+<li>有时一个包会被多个包同时导入，例如很多包可能都会用到 fmt 包，但它只会被导入一次，因为没有逼到导入多次</li>
+<li>当一个包被导入时，若该包还导入了其它的包，那么会将其他包导入进来，然后再初始化这些包中的常量和变量，接着执行init函数（前提init函数存在），依次类推</li>
+<li>等所有被导入的包都加载完毕，就会开始初始化 main包中的包级常量和变量，然后执行main包中的init函数（前提init存在），最后执行main函数。</li>
+</ul>
+</li>
+</ul>
+<h4 id="import"><a href="#import" class="headerlink" title="import"></a>import</h4><ul>
+<li><p>经常用 import 导入包文件，如下：</p>
+<pre><code>import(
+    &quot;fmt&quot;
 )
-const v = iota   // 每遇到一个 const 关键字，iota就会重置，此时 v==0</code></pre></li>
-</ul>
-<h4 id="Go-程序设计的一些规则"><a href="#Go-程序设计的一些规则" class="headerlink" title="Go 程序设计的一些规则"></a>Go 程序设计的一些规则</h4><ul>
-<li>大写字母开头的变量是可导出的，也是其他包可读取的，是公用变量</li>
-<li>小写字母开头的就是不可导出的，是私有变量</li>
-<li>大写字母开头的函数相当于 class 中的带有 public 关键字的公有函数</li>
-<li>小写字母开头的就是有 private 关键字的私有函数</li>
-<li><u><strong>【还需要好好理解上面四句话，不是很深刻】</strong></u></li>
-</ul>
-<h4 id="array-、slice-、map"><a href="#array-、slice-、map" class="headerlink" title="array 、slice 、map"></a>array 、slice 、map</h4><ul>
-<li><p>array</p>
+fmt.Println(&quot;hello world!&quot;)</code></pre><p>上述代码fmt是Go语言的标准库，会去goroot下加载该模块</p>
+</li>
+<li><p>import 加载写模块的常见方式：</p>
 <ul>
-<li><p>array 就是数组，定义方式：</p>
-<pre><code>var arr [n]type //其中 n 表示数组的长度，type 表示存储元素的类型</code></pre></li>
-<li><p>通过 [] 进行对数据的读取或赋值：</p>
-<pre><code>var arr [10]int  //声明了一个 int 类型的数组
-arr[0] = 42      //数组下标是从 0 开始的，同时赋值
-arr[1] = 13      //对下标 1 进行赋值操作
-fmt.Printf(&quot;The first element is %d\n&quot;,arr[0])  //获取数据，返回42
-fmt.Printf(&quot;The last  element is %d\n&quot;,arr[9])  //返回未赋值的最后一个元素，默认返回0</code></pre></li>
-<li><p>长度是数组类型的一部分，数组不能改变长度</p>
-</li>
-<li><p>数组之间的赋值是值得赋值，即当把一个数组作为参数传入函数时，传入得其实是该数组的副本，非指针</p>
-</li>
-<li><p>数组可以用 := 来声明</p>
-<pre><code>a := [3]int{1,2,3} //声明了一个长度为 3 的 int 数组
-b := [10]int{1,2,3} //声明了一个长度为 10 的 int 数组，前三个元素初始化为1，2，3，其他为 0
-c := [...]int{4,5,6} // ...表示省略长度，Go 会自动根据元素个数来计算长度</code></pre></li>
-<li><p>Go 支持嵌套数组，即多维数组</p>
-<pre><code>//声明了一个二维数组，该数组以两个数组作为元素，其中每个数组中又有 4 个 int 类型的元素
-doubleArray := [2][4]int{[4]int{1,2,3,4},[4]int{5,6,7,8}}
-//若内部元素和外部的一样，那上面的声明可以简化，直接忽略内部的类型
-easyArray := [2][4]int{{1,2,3,4},{5,6,7,8}}</code></pre></li>
+<li><p>相对路径：</p>
+<pre><code>import &quot;./model&quot; //当前文件同一目录的model目录</code></pre></li>
+<li><p>绝对路径：</p>
+<pre><code>import &quot;shorturl/model&quot; //加载gopath/src/shorturl/model模块</code></pre></li>
 </ul>
 </li>
-<li><p>slice</p>
+<li><p>import 加载写模块的非常见的方式：</p>
 <ul>
-<li><p>很多应用场景中，我们需要“动态数组”，在Go中这种数据结构叫 slice</p>
+<li><p>点操作：</p>
+<pre><code>import(
+      .  &quot;fmt&quot;
+)</code></pre><p>点操作含义：这个包导入之后被调用时，可省略前缀包名。即前面调用的fmt.Println(“hello world”)可以省略地写成Println(“hello world”)</p>
 </li>
-<li><p>slice 并不是真正意义上的动态数组，而是一个引用类型</p>
+<li><p>别名操作：</p>
+<pre><code>import(
+    f  &quot;fmt&quot;
+)</code></pre><p>别名操作调用包函数时前缀变成了定义的别名，即 f.Println(“hello world”)</p>
 </li>
-<li><p>slice 总是指向一个底层 array，slice 的声明也可以同 array 一样，只是不需要长度</p>
-<pre><code>var fslice []int   //和声明 array 一样，只是少了长度
-slice := []byte {&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;} //声明一个 slice 并初始化数据</code></pre></li>
-<li><p>slice 可以从一个数组或已经存在的 slice 中再次声明</p>
+<li><p>_操作</p>
+<pre><code>import(
+     &quot;database/sql&quot;
+     _ &quot;github.com/ziutek/mymysql/godrv&quot;
+)</code></pre><p>_操作引入该包，不直接使用包里的函数，而是调用了该包里的init函数</p>
 </li>
-<li><p>slice 通过 array[i:j] 来获取，其中 i 是数组的开始位置，j 是结束位置，但不包含 array[j]，长度是 j-i</p>
-<pre><code>//声明含有10个元素类型为type的数组
-var ar = [10]byte {&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;,&#39;e&#39;,&#39;f&#39;,&#39;g&#39;,&#39;h&#39;,&#39;i&#39;,&#39;j&#39;} 
-var   a, b []byte   //声明两个含有byte的slice
-a = ar[2:5]         //a指向数组的第3个元素开始，并到第五个元素结束，即ar[2],ar[3],ar[4]
-b = ar[3:5]         //b 含有的元素是 ar[3],ar[4]</code></pre></li>
-<li><p>slice 和 数组在声明时的区别：</p>
-<ul>
-<li>声明数组时，方括号内写明了数组的长度或使用…自动计算长度</li>
-<li>声明 slice 时，方括号内没有任何字符</li>
-</ul>
-</li>
-<li><p>slice 和 array 的对应关系图【没怎么看懂这种对应关系图】</p>
-</li>
-<li><p>slice 的简单操作：</p>
-<ul>
-<li>slice 的默认开始位置是 0 , ar[:n] 等价于 ar[0:n] ,slice 的第二个序列默认是数组的长度，                     ar[n:] 等价于 ar[0:len(ar)]</li>
-<li>从一个数组里面直接获取 slice，可以这样 ar[:]，因为默认第一个序列为 0 ，第二个是数组的长度，即等价于 ar[0:len(ar)]</li>
-</ul>
-</li>
-<li><p>slice 的更多操作：</p>
-<pre><code>var arry = [10]byte{&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;, &#39;i&#39;, &#39;j&#39;} //声明一个数组
-var aSlice, bSlice []byte     //声明两个 slice</code></pre><p>以下是简单操作：</p>
-<pre><code>aSlice = array[:3] 等价于 aSlice = array[0:3], aSlice 包含 a,b,c 元素
-aSlice = array[5:] 等价于 aSlice = array[5:10], aSlice 包含 f,g,h,i,j 元素
-aSlice = array[:]  等价于 aSlice = array[0:10], aSlice 包含全部元素</code></pre><p>以下是从 slice 中获取 slice 的操作：</p>
-<pre><code>aSlice = array[3:7]   //aSlice 包含 d,e,f,g 元素, len=4, cap=7
-bSlice = aSlice[1:3]  //bSlice 包含 aSlice[1],aSlice[2],即含有 e,f 元素
-bSlice = aSlice[:3]   //bSlice 包含 aSlice[0],aSlice[1],aSlice[2],即含有 d,e,f 元素
-bSlice = aSlice[0:5]  //对 slice 的 slice 可以在 cap 范围内扩展，bSlice 含有 d,e,f,g,h
-bSlice = aSlice[:]    //bSlice 包含所有 aSlice 的元素：d,e,f,g</code></pre></li>
-<li><p>slice 是引用类型，当引用改变其中元素的值时，其他所有的引用都会改变该值</p>
-</li>
-<li><p>从概念上来讲：slice像一个结构体，这个结构体包含三个元素：</p>
-<ul>
-<li>指针，指向数组中 slice 指定的开始位置</li>
-<li>长度，slice 的长度</li>
-<li>最大长度，slice 开始位置到数组的最后位置的最大长度</li>
-</ul>
-</li>
-<li><p>slice 几个有用的内置函数：</p>
-<ul>
-<li>len 获取 slice 的长度</li>
-<li>cap 获取 slice 的最大容量</li>
-<li>append 向 slice 里追加一个或多个元素，然后返回一个和 slice 一样类型的 slice<ul>
-<li>append 函数会改变 slice 所引用的数组的内容，进而影响引用同一数组的其他 slice</li>
-<li>当 slice 中无剩余空间（（cap-len）==0），将动态分配新的数组空间，返回的 slice 数组指针将指向这个空间，而原数组的内容将保持不变，其他引用此数组的 slice 不受影响</li>
-</ul>
-</li>
-<li>copy 函数 copy 从源 slice 的 src 中复制元素到目标 dst，并返回复制的元素的个数</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>map</p>
-<ul>
-<li><p>格式：map[keyType]valueType</p>
-</li>
-<li><p>map 的读取和设置通过key来操作，同 slice 一样，区别是 slice 的 index 只能是 int 类型，而 map 类型很多，有 int ,string 及所有完全定了 == 与 != 操作的类型</p>
-<pre><code>// 声明了一个 key 是字符串，值为 int 的字典，这种方式的声明需要在使用之前使用 make 初始化
-var  numbers  map[string] int </code></pre><pre><code>numbers := make(map[string]int) // 另一种 map 的声明方式
-numbers[&quot;one&quot;] = 1              // 赋值
-numbers[&quot;ten&quot;] = 10             // 赋值
-numbers[&quot;three&quot;] = 3            // 赋值
-fmt.Println(&quot;第三个数字是：&quot;，numbers[&quot;three&quot;]) // 读取数据，值为3</code></pre><p>注意点：</p>
-<ul>
-<li><p>map 是无序的，每次打印出来的 map 都会不一样，它不能通过 index 获取，必须通过 key 获取</p>
-</li>
-<li><p>map 长度是不固定的，是一种引用类型</p>
-</li>
-<li><p>内置的 len 函数同样适用于 map，返回 map 拥有的 key 的数量</p>
-</li>
-<li><p>map 的值很方便被修改：</p>
-<ul>
-<li><p>通过 numbers[“one”]=11 可以很容易的把 key 为 one 的字典值 改为11</p>
-</li>
-<li><p>map 的初始化可以通过 key:val 的方式初始化值</p>
-</li>
-<li><p>map 内置有判断是否存在 key 的方式通过 delete 删除 map 元素</p>
-<pre><code>// 初始化一个字典
-rating := map[string]float32 {&quot;C&quot;:5, &quot;Go&quot;:4.5, &quot;Python&quot;:4.5, &quot;C++&quot;:2 } 
-//map 有两个返回值，第二个返回值，如果不存在key，那么ok 为false，如果存在ok 为 true
-csharpRating, ok := rating[&quot;C#&quot;]
-if ok { 
-     fmt.Println(&quot;C# is in the map and its rating is &quot;, csharpRating) } 
-else { 
-      fmt.Println(&quot;We have no rating associated with C# in the map&quot;) } delete(rating, &quot;C&quot;) // 删除 key 为 C 的元素</code></pre><p>【这段代码有点似懂非懂，后面需要回溯】</p>
-</li>
-<li><p>如果两个 map 同时指向一个底层，那么一个改变，另一个随之改变</p>
-<pre><code>m := make(map[string]string)
-m[&quot;Hello&quot;] = &quot;Bonjour&quot;
-m1 := m
-m1[&quot;Hello&quot;] = &quot;Salut&quot;  // m[&quot;Hello&quot;]发生改变，变成了 Salut</code></pre></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>make 和 new</p>
-<ul>
-<li>make 用于内建类型（map、slice和channel）的内存分配<ul>
-<li>内建函数 make(T, args) 只能创建 slice,map 和 channel，并返回一个<strong>有初始值（非零）</strong>的 T 类型，而不是 *T 。</li>
-<li>本质来讲，导致这三个类型有所不同的原因是指向数据结构的引用再使用前必须被初始化<ul>
-<li>例如，一个 slice ，是一个包含指向数据 （内部 array）的指针、长度和容量的三项描述符，在这些项目被初始化之前，slice 为 nil。</li>
-<li>对于 slice,map,channel来说，make 初始化了内部的数据结构，填充适当的值</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>new 用于各种类型的内存分配<ul>
-<li>内建函数 new(T) 分配了零值填充的 T 类型的内存空间，并且返回其地址，即一个 <em>T 类型的值，即它*</em>返回了一个指针**，指向新分配的类型 T 的零值</li>
-</ul>
-</li>
-<li>【详细解释了 new 和 make 之间区别的图，需要回溯理解】</li>
 </ul>
 </li>
 </ul>
@@ -748,9 +841,9 @@ m1[&quot;Hello&quot;] = &quot;Salut&quot;  // m[&quot;Hello&quot;]发生改变�
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《章节二Go语言基础之部分一》
+                    《章节二Go语言基础之部分二》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/03/zhang-jie-er-go-yu-yan-ji-chu-zhi-bu-fen-yi/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/07/04/zhang-jie-er-go-yu-yan-ji-chu-bu-fen-er/" property="cc:attributionName"
                rel="cc:attributionURL">
                 蒋威
             </a> 采用
@@ -790,9 +883,10 @@ m1[&quot;Hello&quot;] = &quot;Salut&quot;  // m[&quot;Hello&quot;]发生改变�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/07/04/zhang-jie-er-go-yu-yan-ji-chu-bu-fen-er/">
                     <div class="card-image">
@@ -816,9 +910,9 @@ if x &gt; 10 {
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -831,6 +925,7 @@ if x &gt; 10 {
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -853,28 +948,29 @@ if x &gt; 10 {
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/07/02/zhang-jie-yi-go-huan-jing-bian-liang/">
+                <a href="/2019/07/03/zhang-jie-er-go-yu-yan-ji-chu-zhi-bu-fen-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="章一Go环境变量">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="章节二Go语言基础之部分一">
                         
-                        <span class="card-title">章一Go环境变量</span>
+                        <span class="card-title">章节二Go语言基础之部分一</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            整理了一份思维导图，便于理解书籍章节，如下所示：
+                            说明
+编译速度非常快，比C语言编译快
 
-额，很遗憾，我做了几次尝试，并没有解决插入图片的问题。
-所以图片可以通过我的博客园查看完整图片，单击此处获取我博客园关于本章节的地址
-
+二十五个关键字有：
+break      default       func       interface       select
+case       defer         go    
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-02
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-03
                             </span>
                         <span class="publish-author">
                             
